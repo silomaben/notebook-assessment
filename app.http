@@ -1,0 +1,31 @@
+#create a note
+POST http://localhost:4500/notebook
+Content-Type: application/json
+
+{
+    "note_title": "Smile a little",
+    "content": "A son asked his father (a programmer) why the sun rises in the east, and sets in the west. His response? It works, don’t touch!"
+}
+
+###
+#fetch whole notebook
+GET http://localhost:4500/notebook
+
+
+###
+#fetch a single note
+GET http://localhost:4500/notebook/99ab0903-c1b1-42ad-abb8-c0f39e4208c7
+###
+#update a note by its id
+POST http://localhost:4500/notebook/99ab0903-c1b1-42ad-abb8-c0f39e4208c7
+Content-Type: application/json
+
+{
+    "note_title": "T*** phone ringing",
+    "content": "Check my pockets what i made today!"
+}
+
+
+###
+#delete note by its id
+DELETE  http://localhost:4500/notebook/99ab0903-c1b1-42ad-abb8-c0f39e4208c7
