@@ -137,6 +137,21 @@ const deleteNote = async(req,res)=>{
         // console.log(` the id ${id}`);
 
         const note_index = notes.findIndex(note => note.id==id);
+        const pool = await mssql.connect(sqlConfig)
+
+        const result = await pool.request()
+        .input('id', id)
+        .execute('deleteNote')
+      
+        if(result.rowsAffected == 1){
+            res.json({
+                    message: 'Note deleted successfully'
+            })
+        }else{
+            res.json({
+                message: 'Note not found'
+        })
+        }
 
         // console.log(`Note index: ${note_index}`);
         if(note_index < 0){
