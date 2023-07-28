@@ -14,18 +14,18 @@ GET http://localhost:4500/notebook
 
 ###
 #fetch a single note
-GET http://localhost:4500/notebook/99ab0903-c1b1-42ad-abb8-c0f39e4208c7
+GET http://localhost:4500/notebook/0639460b-067b-4de9-8619-7373809977d3
 ###
 #update a note by its id
-POST http://localhost:4500/notebook/99ab0903-c1b1-42ad-abb8-c0f39e4208c7
+POST http://localhost:4500/notebook/9f39779b-c788-4153-a79c-ee35544c83f3
 Content-Type: application/json
 
 {
-    "note_title": "T*** phone ringing",
-    "content": "Check my pockets what i made today!"
+    "note_title": "Bryson Potts Note",
+    "content": "I be silent on it but I keep on smilling"
 }
 
 
 ###
 #delete note by its id
-DELETE  http://localhost:4500/notebook/99ab0903-c1b1-42ad-abb8-c0f39e4208c7
+DELETE  http://localhost:4500/notebook/8590239a-a578-4b56-937f-cb60b2b78b41

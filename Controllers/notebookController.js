@@ -154,14 +154,14 @@ const deleteNote = async(req,res)=>{
         }
 
         // console.log(`Note index: ${note_index}`);
-        if(note_index < 0){
-            return res.json({ message: 'Note not found' });
-        }else {
-            notes.splice(note_index,1)
-        }
-        res.json({
-            message: 'project deleted successfully',
-        })
+        // if(note_index < 0){
+        //     return res.json({ message: 'Note not found' });
+        // }else {
+        //     notes.splice(note_index,1)
+        // }
+        // res.json({
+        //     message: 'Note deleted successfully',
+        // })
 
     } catch (error) {
         return res.json({Error:error});
