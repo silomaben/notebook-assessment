@@ -94,9 +94,9 @@ const updateNote = async(req,res)=>{
 
         const {note_title, content} = req.body
 
-        // if(!note_title || !content ){
-        //     return res.json({ message: "please input all fields" })
-        // }
+        if(!note_title || !content ){
+            return res.json({ message: "please input all fields" })
+        }
 
         const pool = await mssql.connect(sqlConfig)
 
@@ -113,7 +113,7 @@ const updateNote = async(req,res)=>{
                     message: "Note updated successfully"
                 })
             }else{
-                return res.json({message: "Note updating failed"})
+                return res.json({message: "Note not found"})
             }
 
         }

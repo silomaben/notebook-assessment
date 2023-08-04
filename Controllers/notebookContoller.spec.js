@@ -137,7 +137,7 @@ describe("updating note",()=>{
             })
         })
 
-        await updateNote(req, res)npm
+        await updateNote(req, res)
 
         expect(res.json).toHaveBeenCalledWith({
             message: 'Note not found'
