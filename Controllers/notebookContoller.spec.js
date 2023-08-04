@@ -112,39 +112,39 @@ describe("updating note",()=>{
 
     })
 
-    // it("should return error when project ID does not exist", async ()=>{
-    //     const updatedNote = {
-    //         "id": "bac727c4-4178-427a-a239-063f5c58ae86",
-    //         "note_title": "Smile a little",
-    //         "content": "It works, don’t touch!",
-    //         "createdAt": "2023-08-03T00:00:00.000Z"
-    //       }
+    it("should return error when project ID does not exist", async ()=>{
+        const updatedNote = {
+            "id": "bac727c4-4178-427a-a239-063f5c58ae86",
+            "note_title": "Smile a little",
+            "content": "It works, don’t touch!",
+            "createdAt": "2023-08-03T00:00:00.000Z"
+          }
 
-    //     const mockedNoteId = '969f9f87-e948-4895-a183-21474d3oiuytrrtyuoiuytced78'
+        const mockedNoteId = '969f9f87-e948-4895-a183-21474d3oiuytrrtyuoiuytced78'
         
-    //     const req = {
-    //         params:{
-    //             id:mockedNoteId
-    //         },
-    //         body: updatedNote
-    //     }
+        const req = {
+            params:{
+                id:mockedNoteId
+            },
+            body: updatedNote
+        }
         
-    //     jest.spyOn(mssql, "connect").mockResolvedValueOnce({
-    //         request: jest.fn().mockReturnThis(),
-    //         input: jest.fn().mockReturnThis(),
-    //         execute: jest.fn().mockResolvedValueOnce({
-    //             rowsAffected: [0]
-    //         })
-    //     })
+        jest.spyOn(mssql, "connect").mockResolvedValueOnce({
+            request: jest.fn().mockReturnThis(),
+            input: jest.fn().mockReturnThis(),
+            execute: jest.fn().mockResolvedValueOnce({
+                rowsAffected: [0]
+            })
+        })
 
-    //     await updateNote(req, res)
+        await updateNote(req, res)npm
 
-    //     expect(res.json).toHaveBeenCalledWith({
-    //         message: 'Note not found'
-    //     })
+        expect(res.json).toHaveBeenCalledWith({
+            message: 'Note not found'
+        })
 
-    //     res.json.mockRestore()
-    // })
+        res.json.mockRestore()
+    })
 
 })
 
