@@ -20,17 +20,23 @@ const createNewNote = async (req,res)=>{
         const currentTime = new Date();
         const {note_title, content} = req.body
 
+        if(!note_title || !content ){
+            return res.json({ message: "please input all fields" })
+        }
+
         const pool = await mssql.connect(sqlConfig)
 
+        
         if(pool.connected){
-            const result = await pool.request()
+           const result =  await pool.request()
             .input('id',mssql.VarChar, id)
             .input('note_title', mssql.VarChar, note_title)
             .input('content', mssql.VarChar, content)
             .input('createdAt', mssql.Date, currentTime)
             .execute('createNoteProcedure')
-
+            
             if(result.rowsAffected==1){
+                console.log('connected jhgijkg');
                 return res.json({
                     message: "Note created successfully"
                 })
@@ -38,19 +44,16 @@ const createNewNote = async (req,res)=>{
                 return res.json({message: "Note creation failed"})
             }
 
+            
+
         }
 
-        // const newNote = new notebook(id,note_title,content,currentTime);
+        
 
-        // notes.push(newNote)
-
-        res.json({
-            message: "Note created sucessfully",
-            note: newNote
-        })
+        
 
     } catch (error) {
-        return res.json({message: "Note creation failed"})
+        return res.json({message: "run into an error"})
     }
 }
 
@@ -91,6 +94,10 @@ const updateNote = async(req,res)=>{
 
         const {note_title, content} = req.body
 
+        // if(!note_title || !content ){
+        //     return res.json({ message: "please input all fields" })
+        // }
+
         const pool = await mssql.connect(sqlConfig)
 
         if(pool.connected){
@@ -113,15 +120,15 @@ const updateNote = async(req,res)=>{
 
         // const note_index = notes.findIndex(note => note.id==id);
 
-        if(note_index < 0){
-            return res.json({ message: 'Note not found' });
-        }else {
-            notes[note_index] = new notebook(id,note_title,content,currentTime);
-        }
-        res.json({
-            message: 'project updated successfully',
-            project: notes[note_index]
-        })
+        // if(note_index < 0){
+        //     return res.json({ message: 'Note not found' });
+        // }else {
+        //     notes[note_index] = new notebook(id,note_title,content,currentTime);
+        // }
+        // res.json({
+        //     message: 'project updated successfully',
+        //     project: notes[note_index]
+        // })
 
 
         

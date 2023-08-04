@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "note_title": "Smile a little",
-    "content": "A son asked his father (a programmer) why the sun rises in the east, and sets in the west. His response? It works, don’t touch!"
+    "content": "It works, don’t touch!"
 }
 
 ###
@@ -14,10 +14,11 @@ GET http://localhost:4500/notebook
 
 ###
 #fetch a single note
-GET http://localhost:4500/notebook/0639460b-067b-4de9-8619-7373809977d3
+GET http://localhost:4500/notebook/94309207-5445-4299-bcf3-558016e7d183
+
 ###
 #update a note by its id
-POST http://localhost:4500/notebook/9f39779b-c788-4153-a79c-ee35544c83f3
+POST http://localhost:4500/notebook/94309207-5445-4299-bcf3-558016e7d183
 Content-Type: application/json
 
 {
@@ -28,4 +29,4 @@ Content-Type: application/json
 
 ###
 #delete note by its id
-DELETE  http://localhost:4500/notebook/8590239a-a578-4b56-937f-cb60b2b78b41
+DELETE  http://localhost:4500/notebook/58dc7b3b-00ec-40e8-b5ce-6ab91e3434f1

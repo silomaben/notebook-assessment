@@ -21,7 +21,7 @@ const sqlConfig = {
 
 
 
-console.log(`${process.env.DB_USER}  ${process.env.DB_PWD}  ${process.env.DB_NAME}`)
+// console.log(`${process.env.DB_USER}  ${process.env.DB_PWD}  ${process.env.DB_NAME}`)
 
 mssql.connect(sqlConfig)
   .then(pool => {

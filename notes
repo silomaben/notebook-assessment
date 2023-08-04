@@ -1,0 +1,14 @@
+jest
+
+npm i -g jest
+
+jest --init
+
+all no, then node and v8
+
+uncoment ignore folders page 30 then uncomment line 157 the format of test file or folder.
+
+add 'test':jest to package.json
+
+do jest -watch in package.json for test to be auto refresh 
+
